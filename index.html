@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Regals de Vi a Domicili Andorra | Compra Lotes Gourmet Online</title>
+    <meta name="description" content="Regala vins exclusius i lots gourmet a Andorra. Entrega a domicili de vins italians Cabota, bombons i pernil ibèric. Fes la teva comanda online avui mateix!">
+    <meta name="keywords" content="regals vi Andorra, entrega vi Andorra, comprar vi online Andorra, lots gourmet Andorra, vi Cabota, regals a domicili">
+    <link rel="canonical" href="https://onlinevinoteca.com/" />
+
+    <link rel="alternate" hreflang="ca" href="https://onlinevinoteca.com/" />
+    <link rel="alternate" hreflang="en" href="https://onlinevinoteca.com/en/" />
+    <link rel="alternate" hreflang="ru" href="https://onlinevinoteca.com/ru/" />
+    <link rel="alternate" hreflang="fr" href="https://onlinevinoteca.com/fr/" />
+    <link rel="alternate" hreflang="es" href="https://onlinevinoteca.com/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://onlinevinoteca.com/" />
+
+    <meta property="og:title" content="Regals de Vi Andorra | Online Vinoteca">
+    <meta property="og:description" content="Els millors vins i productes gourmet entregats a domicili a Andorra.">
+    <meta property="og:url" content="https://onlinevinoteca.com/">
+    <meta property="og:type" content="website">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "Online Vinoteca Andorra",
+      "description": "Servei exclusiu d'entrega de regals de vi i productes gourmet a Andorra.",
+      "url": "https://onlinevinoteca.com/",
+      "telephone": "+376691408",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Andorra la Vella",
+        "addressCountry": "AD"
+      },
+      "priceRange": "€€"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-color: #7B1E3A;
+            --bg-color: #F8F5F2;
+            --text-color: #1A1A1A;
+            --whatsapp-color: #25D366;
+            --whatsapp-hover-color: #1ebe57;
+        }
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header { text-align: center; padding: 60px 20px; }
+        header h1 { margin: 0; font-size: 38px; font-weight: 600; color: var(--accent-color); }
+        header p { margin-top: 15px; font-size: 19px; font-weight: 400; max-width: 800px; margin-left: auto; margin-right: auto; }
+        
+        .language-switcher { text-align: center; margin-top: 25px; }
+        .language-switcher a { text-decoration: none; }
+        .language-switcher button { 
+            background: var(--accent-color); color: #fff; border: none; border-radius: 25px; 
+            padding: 8px 18px; margin: 5px; font-size: 14px; font-weight: 600; cursor: pointer; 
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .language-switcher button:hover { transform: scale(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .language-switcher .active { background: #333; }
+
+        .section { padding: 50px 20px; max-width: 1100px; margin: auto; }
+        .section h2 { text-align: center; color: var(--accent-color); font-size: 32px; font-weight: 600; margin-bottom: 30px; }
+        
+        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .feature { 
+            background: #fff; border-radius: 10px; padding: 30px; flex: 1 1 280px; text-align: center; 
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s; opacity: 0; transform: translateY(30px);
+        }
+        .feature.visible { opacity: 1; transform: translateY(0); }
+        .feature:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .feature h3 { margin-top: 0; font-size: 24px; font-weight: 600; color: var(--accent-color); }
+
+        .products-container { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+        .product { 
+            background: #fff; border-radius: 10px; padding: 20px; flex: 1 1 320px; box-sizing: border-box; 
+            display: flex; flex-direction: column; justify-content: space-between; 
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s; opacity: 0; transform: translateY(30px);
+        }
+        .product.visible { opacity: 1; transform: translateY(0); }
+        .product img { width: 100%; border-radius: 5px; margin-bottom: 15px; }
+        .product h3 { margin: 10px 0; font-size: 20px; font-weight: 600; color: var(--accent-color); text-align: center; }
+        .product .sommelier-title { display: block; font-size: 15px; font-weight: bold; margin: 10px 0 5px 0; }
+        .product .sommelier-desc { display: block; font-size: 14px; color: #555; }
+        .product .price { font-size: 22px; font-weight: 600; color: var(--accent-color); text-align: center; margin-top: 15px; }
+        .product ul { list-style: disc; padding-left: 20px; margin: 15px 0; }
+
+        .btn-whatsapp-container { text-align: center; margin: 60px 0; }
+        .btn-whatsapp {
+            display: inline-block; padding: 15px 35px; background: var(--whatsapp-color); color: #fff;
+            text-decoration: none; border-radius: 50px; font-size: 20px; font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s; animation: pulse 2.5s infinite ease-in-out;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        .footer { text-align: center; padding: 40px 20px; font-size: 15px; color: #777; background: #eee; }
+        
+        @media(max-width:900px){ .product { flex: 1 1 45%; } }
+        @media(max-width:600px){ header h1 { font-size: 30px; } .product { flex: 1 1 100%; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Regals de vi amb entrega a domicili a Andorra</h1>
+    <p>Tria el vi perfecte, afegeix productes gourmet i nosaltres prepararem i entregarem el teu regal premium a qualsevol lloc d'Andorra.</p>
+
+    <div class="language-switcher">
+        <a href="/"><button class="active">CAT</button></a>
+        <a href="/en/"><button>ENG</button></a>
+        <a href="/fr/"><button>FR</button></a>
+        <a href="/es/"><button>ESP</button></a>
+        <a href="/ru/"><button>RUS</button></a>
+    </div>
+</header>
+
+<section class="section">
+    <h2>Com funciona</h2>
+    <div class="features">
+        <div class="feature">
+            <h3>Tria el vi</h3>
+            <p>Selecciona entre la nostra exclusiva col·lecció de vins italians, incloent-hi la gamma única Cabota.</p>
+        </div>
+        <div class="feature">
+            <h3>Afegeix Gourmet</h3>
+            <p>Completa el teu regal amb bombons artesans, formatges selectes o autèntic pernil ibèric.</p>
+        </div>
+        <div class="feature">
+            <h3>Nosaltres entreguem</h3>
+            <p>Cuidem l'embalatge i assegurem una entrega segura i puntual a la porta del destinatari.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="products">
+    <h2>Tria el vi per al teu lot</h2>
+    <div class="products-container">
+        <div class="product">
+            <img src="images/cerviero.png" alt="Cerviero Rosso Veneto IGT - Regal Vi Andorra">
+            <h3>Cerviero Rosso Veneto IGT</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Aromes de cireres, gerds i fruits del bosc amb un toc de pebre verd. Final llarg i suau. Ideal amb carns i formatges curats.</span>
+            <span class="price">€17.99</span>
+        </div>
+        <div class="product">
+            <img src="images/costarosa.png" alt="Costa Rossa Valpolicella Ripasso - Entrega vi Andorra">
+            <h3>Costa Rossa Valpolicella Ripasso DOC Superiore</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Vermell rubí intens, aromes de fruits del bosc, timó i espècies. Tanins suaus i acidesa equilibrada. Final fresc i persistent.</span>
+            <span class="price">€27.99</span>
+        </div>
+        <div class="product">
+            <img src="images/piandimezzo.jpeg" alt="Pian di Mezzo Amarone - Vi de Luxe Andorra">
+            <h3>Pian di Mezzo Amarone della Valpolicella DOCG Riserva</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Vermell fosc intens amb aromes de xocolata, mores i espècies. En boca és ric amb notes de cireres amarena i ametlles.</span>
+            <span class="price">€90.99</span>
+        </div>
+        <div class="product">
+            <img src="images/pergolette.png" alt="Le Pergolette Garganega Bianco - Regal Vi Blanc Andorra">
+            <h3>Le Pergolette Garganega Bianco Veronese IGT</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Vi blanc sec amb reflexos daurats. Aromes de préssec, poma golden i flors blanques. Sabor d'albercoc i pera.</span>
+            <span class="price">€16.99</span>
+        </div>
+        <div class="product">
+            <img src="images/prosecco.png" alt="Prosecco DOC YM - Vi Escumós Andorra">
+            <h3>Prosecco DOC YM</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Burbulles delicades i vives per a un toc festiu. Aromes de poma madura i melmelada de llima. Ideal per a celebracions.</span>
+            <span class="price">€11.99</span>
+        </div>
+        <div class="product">
+            <img src="images/tenjaku.png" alt="Tenjaku Whisky Malta - Entrega Alcohol Andorra">
+            <h3>TENJAKU WHISKY MALTA 70CL</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Elegant i intens amb notes de malta, vainilla i fusta torrada. 40% vol. Envellit en barriques de roure.</span>
+            <span class="price">€31.99</span>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Afegeix productes gourmet</h2>
+    <div class="products-container">
+        <div class="product"><img src="images/bombons.png" alt="Bombons gourmet Andorra"><h3>Bombons</h3><span class="price">€15.99</span></div>
+        <div class="product"><img src="images/formatge.jpg" alt="Formatge artesà Andorra"><h3>Formatge</h3><span class="price">€15.99</span></div>
+        <div class="product"><img src="images/pernil.png" alt="Pernil Ibèric Andorra"><h3>Pernil Ibèric</h3><span class="price">€15.99</span></div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Opcions d'embalatge de regal</h2>
+    <div class="products-container" style="justify-content:center; gap:40px;">
+        <div class="product" style="max-width:250px;">
+            <img src="images/estandard.jpg" alt="Caixa regal Estàndard Andorra">
+            <h3>Estàndard</h3>
+            <ul>
+                <li>Embalatge elegant</li>
+                <li>Targeta de regal</li>
+                <li>Entrega estàndard</li>
+            </ul>
+            <span class="price">€49.99</span>
+        </div>
+        <div class="product" style="max-width:250px;">
+            <img src="images/premium.jpg" alt="Caixa regal Premium Andorra">
+            <h3>Premium</h3>
+            <ul>
+                <li>Embalatge de luxe</li>
+                <li>Targeta de regal</li>
+                <li>Dues copes de vi elegants</li>
+                <li>Entrega prioritària</li>
+            </ul>
+            <span class="price">€79.99</span>
+        </div>
+    </div>
+
+    <h2>Sobre nosaltres</h2>
+    <p style="text-align:center;">Des de fa més de 10 anys, compartim la nostra passió pels vins exclusius a Andorra. Com a distribuïdors exclusius dels vins italians Cabota, garantim productes d'alta gamma i un servei impecable perquè cada regal sigui inoblidable.</p>
+</section>
+
+<div class="btn-whatsapp-container">
+    <a class="btn-whatsapp" href="https://wa.me/376691408?text=Hola!%20Voldria%20fer%20una%20comanda%20de%20regal" target="_blank">Demanar per WhatsApp</a>
+</div>
+
+<footer class="footer">
+    &copy; 2026 Online Vinoteca Andorra - Regals de Vi Premium i Entregues
+</footer>
+
+<script>
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.feature, .product');
+        const triggerBottom = window.innerHeight * 0.85;
+        elements.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if(top < triggerBottom) el.classList.add('visible');
+        });
+    }
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+</script>
+
+</body>
+</html>
