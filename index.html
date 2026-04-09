@@ -9,20 +9,21 @@
     <meta name="keywords" content="regals vi Andorra, entrega vi Andorra, comprar vi online Andorra, lots gourmet Andorra, vi Cabota, regals a domicili">
     <link rel="canonical" href="https://onlinevinoteca.com/" />
     
-    <link rel="icon" type="/image/webp" href="/images/favicon.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://onlinevinoteca.com/">
     <meta property="og:title" content="Regals de Vi a Domicili Andorra | Online Vinoteca">
     <meta property="og:description" content="Vins exclusius Cabota i productes gourmet amb entrega a tot Andorra.">
-    <meta property="og:image" content="https://onlinevinoteca.com/images/macro%20probki.webp">
+    <meta property="og:image" content="https://onlinevinoteca.com/images/probki.webp">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WineStore",
       "name": "Online Vinoteca Andorra",
-      "image": "/images/macroprobki.webp",
+      "image": "/images/probki.webp",
       "@id": "https://onlinevinoteca.com",
       "url": "https://onlinevinoteca.com",
       "telephone": "+376691408",
@@ -63,10 +64,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ПЛАВНЫЙ СКРОЛЛ */
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         :root {
             --accent-color: #7B1E3A;
@@ -85,7 +83,6 @@
             line-height: 1.6;
         }
 
-        /* --- ВЕРХНЯЯ ПАНЕЛЬ --- */
         .top-bar {
             position: absolute;
             top: 0;
@@ -99,10 +96,7 @@
             z-index: 100;
         }
 
-        .social-links {
-            display: flex;
-            gap: 12px;
-        }
+        .social-links { display: flex; gap: 12px; }
         .social-btn {
             display: flex;
             align-items: center;
@@ -121,16 +115,9 @@
             border-color: var(--accent-color);
             transform: scale(1.1);
         }
-        .social-btn svg {
-            width: 22px;
-            height: 22px;
-            fill: white;
-        }
+        .social-btn svg { width: 22px; height: 22px; fill: white; }
 
-        .language-switcher {
-            display: flex;
-            gap: 8px;
-        }
+        .language-switcher { display: flex; gap: 8px; }
         .language-switcher a {
             text-decoration: none;
             color: white;
@@ -148,7 +135,7 @@
             border-color: var(--accent-color);
         }
 
-        /* --- 1 БЛОК: Hero Section --- */
+        /* --- 1 БЛОК: probki.webp --- */
         header {
             position: relative;
             height: 80vh;
@@ -158,8 +145,9 @@
             align-items: center;
             text-align: center;
             color: white;
+            /* Исправлено: Главный фон сайта */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('/images/macro probki.webp') no-repeat center center/cover;
+                        url('/images/probki.webp') no-repeat center center/cover;
             padding: 20px;
         }
         header h1 {
@@ -177,16 +165,10 @@
             opacity: 0.9;
         }
 
-        /* Скрытый заголовок для SEO */
         .visually-hidden {
             position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
+            width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
         }
 
         .section { padding: 90px 20px; max-width: 1200px; margin: auto; }
@@ -253,15 +235,24 @@
         
         .price { font-size: 1.8rem; font-weight: 700; color: var(--accent-color); display: block; margin-top: 15px; }
 
+        /* --- БЛОК УПАКОВКИ: macro-probki.webp --- */
         .section-packaging {
+            /* Исправлено: Фон макро-пробок для секции упаковки */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('/images/probki.webp') no-repeat center center/cover;
+                        url('/images/macro-probki.webp') no-repeat center center/cover;
             max-width: 100%;
             color: white;
             padding: 100px 20px;
         }
         .section-packaging h2 { color: white; }
-        .section-packaging .product { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); color: white; }
+        
+        /* Стилизация карточек на темном фоне макро-пробок */
+        .section-packaging .product { 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.2); 
+            backdrop-filter: blur(10px); 
+            color: white; 
+        }
         .section-packaging .product h3 { color: white; }
         .section-packaging .sommelier-desc { color: #DDD; }
         .section-packaging .price { color: white; }
@@ -271,22 +262,13 @@
         .card-premium { border: 2px solid var(--gold-color) !important; background: rgba(212, 175, 55, 0.1) !important; }
 
         .btn-whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--whatsapp-color);
-            color: #fff;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 700;
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--whatsapp-color); color: #fff;
+            padding: 16px 32px; text-decoration: none; border-radius: 50px;
+            font-size: 18px; font-weight: 700;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            z-index: 1000; transition: 0.3s;
+            display: flex; align-items: center; gap: 12px;
         }
         .btn-whatsapp-float:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
 
@@ -306,14 +288,10 @@
 <div class="top-bar">
     <div class="social-links">
         <a href="https://www.instagram.com/vinoteca_andorra/" target="_blank" class="social-btn" title="Segueix-nos a Instagram">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.415-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.415-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413 1.266-.057 1.646-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.132 5.775.072 7.053 0 8.333 0 8.741 0 12s.014 3.333.072 4.653c.06 1.277.261 2.148.558 2.913.306.789.717 1.459 1.384 2.126s1.384 1.078 2.13 1.384c.766.296 1.636.499 2.913.558C8.333 23.986 8.741 24 12 24s3.333-.014 4.653-.072c1.277-.06 2.148-.261 2.913-.558.789-.306 1.459-.717 2.126-1.384s1.078-1.384 1.384-2.13c.296-.766.499-1.636.558-2.913.058-1.32.072-1.728.072-4.983s-.014-3.333-.072-4.653c-.06-1.277-.261-2.148-.558-2.913-.306-.789-.717-1.459-1.384-2.126s-1.384-1.078-2.13-1.384c-.766-.296-1.636-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.415-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.415-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413 1.266-.057 1.646-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.132 5.775.072 7.053 0 8.333 0 8.741 0 12s.014 3.333.072 4.653c.06 1.277.261 2.148.558 2.913.306.789.717 1.459 1.384 2.126s1.384 1.078 2.13 1.384c.766.296 1.636.499 2.913.558C8.333 23.986 8.741 24 12 24s3.333-.014 4.653-.072c1.277-.06 2.148-.261 2.913-.558.789-.306 1.459-.717 2.126-1.384s1.078-1.384 1.384-2.13c.296-.766.499-1.636.558-2.913.058-1.32.072-1.728.072-4.983s-.014-3.333-.072-4.653c-.06-1.277-.261-2.148-.558-2.913-.306-.789-.717-1.459-1.384-2.126s-1.384-1.078-2.13-1.384c-.766-.296-1.636-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         </a>
         <a href="mailto:vinoteca.and@gmail.com" class="social-btn" title="Contacta'ns per Email">
-            <svg viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
     </div>
 
@@ -419,7 +397,7 @@
                 <span class="price">€15.99</span>
             </div>
             <div class="product">
-                <img src="/images/pernil.webp" alt="Pernil Ibèric d'aglà tallat a ма" loading="lazy">
+                <img src="/images/pernil.webp" alt="Pernil Ibèric d'aglà tallat a mà" loading="lazy">
                 <h3>Pernil Ibèric</h3>
                 <span class="sommelier-desc">Tallat a mà, d'aglà 100% ibèric. La màxima expressió del sabor.</span>
                 <span class="price">€15.99</span>
