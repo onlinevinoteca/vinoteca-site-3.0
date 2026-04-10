@@ -61,8 +61,7 @@
     <link rel="alternate" hreflang="fr" href="https://onlinevinoteca.com/fr/" />
     <link rel="alternate" hreflang="es" href="https://onlinevinoteca.com/es/" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
 
@@ -101,11 +100,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 10px;
+            border-radius: 20px;
             transition: 0.3s;
             backdrop-filter: blur(3px);
             text-decoration: none;
@@ -115,7 +114,7 @@
             border-color: var(--accent-color);
             transform: scale(1.1);
         }
-        .social-btn svg { width: 22px; height: 22px; fill: white; }
+        .social-btn svg { width: 20px; height: 20px; fill: white; }
 
         .language-switcher { display: flex; gap: 8px; }
         .language-switcher a {
@@ -123,19 +122,23 @@
             color: white;
             font-size: 12px;
             font-weight: 700;
-            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
             border: 1px solid rgba(255,255,255,0.4);
             border-radius: 20px;
             background: rgba(0,0,0,0.3);
             transition: 0.3s;
             backdrop-filter: blur(3px);
+            box-sizing: border-box;
         }
         .language-switcher a:hover, .language-switcher a.active {
             background: var(--accent-color);
             border-color: var(--accent-color);
         }
 
-        /* --- 1 БЛОК: probki.webp --- */
         header {
             position: relative;
             height: 80vh;
@@ -145,8 +148,7 @@
             align-items: center;
             text-align: center;
             color: white;
-            /* Исправлено: Главный фон сайта */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
                         url('/images/probki.webp') no-repeat center center/cover;
             padding: 20px;
         }
@@ -183,18 +185,22 @@
         }
 
         .feature {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.6); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 12px;
-            padding: 50px 30px;
+            padding: 30px 20px;
             flex: 1 1 300px;
             max-width: 340px;
             box-sizing: border-box;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, opacity 0.6s ease;
             opacity: 0;
             transform: translateY(30px);
         }
+
         .feature h3 { 
             font-family: 'Playfair Display', serif; 
             color: var(--accent-color); 
@@ -210,6 +216,7 @@
             gap: 30px;
             justify-content: center;
         }
+
         .product {
             background: var(--card-bg);
             border-radius: 12px;
@@ -219,36 +226,102 @@
             box-sizing: border-box;
             box-shadow: 0 5px 20px rgba(0,0,0,0.04);
             text-align: center;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, opacity 0.6s ease;
             opacity: 0;
             transform: translateY(30px);
             border: 1px solid #F0EAE5;
         }
+
         .product.visible, .feature.visible { opacity: 1; transform: translateY(0); }
-        .product:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        
+        .feature:hover, .product:hover {
+            transform: translateY(-12px) !important; 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+        }
 
         .product img { width: 100%; border-radius: 8px; margin-bottom: 20px; height: 280px; object-fit: contain; }
         .product h3 { font-family: 'Playfair Display', serif; color: var(--accent-color); font-size: 1.4rem; margin: 15px 0; min-height: 3.2rem; display: flex; align-items: center; justify-content: center; }
         
-        .sommelier-title { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; color: #AAA; text-transform: uppercase; letter-spacing: 1px; }
-        .sommelier-desc { display: block; font-size: 15px; color: #555; margin-bottom: 20px; min-height: 70px; font-style: italic; }
+        .sommelier-title { display: block; font-size: 15px; font-weight: bold; margin: 10px 0 5px 0; }
+        .sommelier-desc { display: block; font-size: 15px; color: #555; margin-bottom: 20px; min-height: 70px; }
         
         .price { font-size: 1.8rem; font-weight: 700; color: var(--accent-color); display: block; margin-top: 15px; }
 
-        /* --- БЛОК УПАКОВКИ: macro-probki.webp --- */
-        .section-packaging {
-            /* Исправлено: Фон макро-пробок для секции упаковки */
+        /* --- БЛОК ORDINO (How it works): ordino.webp --- */
+        .section-how-it-works {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('/images/ordino.webp') no-repeat center center/cover;
+            background-attachment: fixed; 
+            max-width: 100% !important;
+            color: white;
+            padding: 100px 20px;
+        }
+
+        .section-how-it-works h2 { color: white !important; }
+
+        .section-how-it-works .feature {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .section-how-it-works .feature h3 { color: white !important; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .section-how-it-works .feature p { color: #ffffff; opacity: 0.9; }
+
+        /* --- БЛОК ВИНА: probki.webp --- */
+        .section-wines {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('/images/probki.webp') no-repeat center center/cover;
-            max-width: 100%;
+            background-attachment: fixed;
+            max-width: 100% !important;
+            color: white;
+            padding: 100px 20px;
+        }
+
+        .section-wines h2 { color: white; }
+        .section-wines .product {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        .section-wines .sommelier-desc { color: #ddd; }
+        .section-wines .price { color: white; }
+
+        /* --- БЛОК ГУРМЭ: gourmet.webp --- */
+        .section-gourmet {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('/images/gourmet.webp') no-repeat center center/cover;
+            background-attachment: fixed;
+            max-width: 100% !important;
+            color: white;
+            padding: 100px 20px;
+        }
+        .section-gourmet h2 { color: white !important; }
+        .section-gourmet .product {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .section-gourmet .sommelier-desc { color: #DDD; }
+        .section-gourmet .price { color: white; }
+
+        /* --- БЛОК УПАКОВКИ: macroprobki.webp --- */
+        .section-packaging {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('/images/macroprobki.webp') no-repeat center center/cover;
+            max-width: 100% !important;
             color: white;
             padding: 100px 20px;
         }
         .section-packaging h2 { color: white; }
-        
-        /* Стилизация карточек на темном фоне макро-пробок */
         .section-packaging .product { 
-            background: rgba(255,255,255,0.05); 
+            background: rgba(0,0,0,0.65); 
             border: 1px solid rgba(255,255,255,0.2); 
             backdrop-filter: blur(10px); 
             color: white; 
@@ -259,18 +332,37 @@
         .section-packaging .product ul { list-style: none; padding: 0; text-align: left; margin: 20px 0; }
         .section-packaging .product ul li::before { content: "✓ "; color: var(--gold-color); font-weight: bold; }
         
+        /* --- БЛОК О НАС (Sobre nosaltres): Текстурный фон --- */
+        .section-about {
+            background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), 
+                        url('/images/ordino.webp') no-repeat center center/cover;
+            max-width: 100% !important;
+            padding: 120px 20px;
+            border-top: 1px solid #eee;
+        }
+        .section-about p {
+            text-align: center; 
+            max-width: 850px; 
+            margin: auto; 
+            font-size: 1.25rem; 
+            color: #222; 
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
         .card-premium { border: 2px solid var(--gold-color) !important; background: rgba(212, 175, 55, 0.1) !important; }
 
         .btn-whatsapp-float {
             position: fixed; bottom: 30px; right: 30px;
-            background: var(--whatsapp-color); color: #fff;
-            padding: 16px 32px; text-decoration: none; border-radius: 50px;
-            font-size: 18px; font-weight: 700;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-            z-index: 1000; transition: 0.3s;
-            display: flex; align-items: center; gap: 12px;
+            background: rgba(37, 211, 102, 0.5); backdrop-filter: blur(8px); 
+            -webkit-backdrop-filter: blur(8px); color: #fff;
+            padding: 10px 20px; text-decoration: none; border-radius: 50px;
+            font-size: 14px; font-weight: 400; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000; transition: 0.3s; display: flex; align-items: center; 
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .btn-whatsapp-float:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
+
+        .btn-whatsapp-float:hover { background: rgba(37, 211, 102, 0.7); transform: translateY(-5px); }
 
         footer { text-align: center; padding: 80px 20px; background: #111; color: #666; font-size: 14px; border-top: 1px solid #222; }
 
@@ -296,11 +388,11 @@
     </div>
 
     <div class="language-switcher">
-        <a href="/" class="active">CAT</a>
-        <a href="/en/">ENG</a>
+        <a href="/" class="active">CA</a>
+        <a href="/en/">EN</a>
         <a href="/fr/">FR</a>
-        <a href="/es/">ESP</a>
-        <a href="/ru/">RUS</a>
+        <a href="/es/">ES</a>
+        <a href="/ru/">RU</a>
     </div>
 </div>
 
@@ -310,7 +402,7 @@
     <p>Tria el vi perfecte, afegeix productes gourmet i nosaltres preparem el teu regal premium.</p>
 </header>
 
-<section class="section">
+<section class="section section-how-it-works">
     <div class="section-inner">
         <h2>Com funciona</h2>
         <div class="products-container">
@@ -330,57 +422,57 @@
     </div>
 </section>
 
-<section class="section" style="padding-top: 0;">
+<section class="section section-wines">
     <div class="section-inner">
         <h2>Tria el vi per al teu lot</h2>
         <div class="products-container">
             <div class="product">
                 <img src="/images/cerviero.webp" alt="Cerviero Rosso Veneto Cabota">
                 <h3>Cerviero Rosso Veneto IGT</h3>
-                <span class="sommelier-title">Sommelier notes:</span>
-                <span class="sommelier-desc">Aromes de cireres i fruits del bosc amb un toc de pebre verd. Final elegant i suau.</span>
-                <span class="price">€17.99</span>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Aromes de cireres, gerds i fruits del bosc amb un toc de pebre verd. Final llarg i suau. Ideal amb carns i formatges curats.</span>
+            <span class="price">€17.99</span>
             </div>
             <div class="product">
                 <img src="/images/costarosa.webp" alt="Costa Rossa Ripasso DOC" loading="lazy">
-                <h3>Costa Rossa Ripasso DOC</h3>
-                <span class="sommelier-title">Sommelier notes:</span>
-                <span class="sommelier-desc">Vermell rubí intens, notes de timó i espècies. Tanins perfectament equilibrats.</span>
-                <span class="price">€27.99</span>
+                 <h3>Costa Rossa Valpolicella Ripasso DOC Superiore</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Vermell rubí intens, aromes de fruits del bosc, timó i espècies. Tanins suaus i acidesa equilibrada. Final fresc i persistent.</span>
+            <span class="price">€27.99</span>
             </div>
             <div class="product">
                 <img src="/images/piandimezzo.webp" alt="Amarone della Valpolicella" loading="lazy">
-                <h3>Amarone della Valpolicella</h3>
-                <span class="sommelier-title">Sommelier notes:</span>
-                <span class="sommelier-desc">Vi de gran cos amb notes de xocolata, mores i cireres amarena. Una joia italiana.</span>
-                <span class="price">€90.99</span>
+               <h3>Pian di Mezzo Amarone della Valpolicella DOCG Riserva</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Vermell fosc intens amb aromes de xocolata, mores i espècies. En boca és ric amb notes de cireres amarena i ametlles.</span>
+            <span class="price">€90.99</span>
             </div>
             <div class="product">
                 <img src="/images/pergolette.webp" alt="Le Pergolette Garganega Blanc" loading="lazy">
-                <h3>Le Pergolette Garganega</h3>
-                <span class="sommelier-title">Sommelier notes:</span>
-                <span class="sommelier-desc">Vi blanc sec i fresc amb reflexos daurats. Aromes de préssec i flors blanques.</span>
-                <span class="price">€16.99</span>
+               <h3>Le Pergolette Garganega Bianco Veronese IGT</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Vi blanc sec amb reflexos daurats. Aromes de préssec, poma golden i flors blanques. Sabor d'albercoc i pera.</span>
+            <span class="price">€16.99</span>
             </div>
             <div class="product">
                 <img src="/images/prosecco.webp" alt="Prosecco DOC YM Espumós" loading="lazy">
                 <h3>Prosecco DOC YM</h3>
-                <span class="sommelier-title">Sommelier notes:</span>
-                <span class="sommelier-desc">Burbulles elegants i vives. Aromes de poma madura. Ideal per a moments festius.</span>
-                <span class="price">€11.99</span>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Burbulles delicades i vives per a un toc festiu. Aromes de poma madura i melmelada de llima. Ideal per a celebracions.</span>
+            <span class="price">€11.99</span>
             </div>
             <div class="product">
                 <img src="/images/tenjaku.webp" alt="Tenjaku Whisky Malta" loading="lazy">
-                <h3>TENJAKU WHISKY MALTA</h3>
-                <span class="sommelier-title">Sommelier notes:</span>
-                <span class="sommelier-desc">Destil·lat intens amb notes de malta, vainilla i fusta torrada. 40% vol.</span>
-                <span class="price">€31.99</span>
+                <h3>TENJAKU WHISKY MALTA 70CL</h3>
+            <span class="sommelier-title">Descripció del Sommelier:</span>
+            <span class="sommelier-desc">Elegant i intens amb notes de malta, vainilla i fusta torrada. 40% vol. Envellit en barriques de roure.</span>
+            <span class="price">€31.99</span>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section" style="padding-top: 0;">
+<section class="section section-gourmet">
     <div class="section-inner">
         <h2>Afegeix productes gourmet</h2>
         <div class="products-container">
@@ -436,17 +528,16 @@
     </div>
 </section>
 
-<section class="section">
+<section class="section section-about">
     <div class="section-inner">
         <h2>Sobre nosaltres</h2>
-        <p style="text-align:center; max-width: 850px; margin: auto; font-size: 1.2rem; color: #444; line-height: 1.8;">
+        <p>
             Des de fa més de 10 anys, compartim la nostra passió pels vins exclusius a Andorra. Com a distribuïdors exclusius de la prestigiosa firma italiana <strong>Cabota</strong>, garantim productes d'alta gamma i un servei personalitzat perquè cada detall sigui una experiència inoblidable.
         </p>
     </div>
 </section>
 
 <a class="btn-whatsapp-float" href="https://wa.me/376691408?text=Hola!%20Voldria%20fer%20una%20comanda" target="_blank">
-    <span>💬</span>
     <span>Demanar per WhatsApp</span>
 </a>
 
