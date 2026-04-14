@@ -66,29 +66,37 @@
         html { scroll-behavior: smooth; }
 
         :root {
-            --secondary-accent: #7B1E3A;
-            --gold-color: #D4AF37;
-            --gold-glow: rgba(212, 175, 55, 0.3);
-            --text-main: #F8F9FA;
-            --text-sub: #F8F9FA;
-            --accent-color: #F8F9FA;
-            --whatsapp-color: #25D366;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.15);
-        }
+    /* Основные акценты */
+    --secondary-accent: #7B1E3A; /* Благородный винный (бордо) */
+    --gold-color: #D4AF37;       /* Классическое золото */
+    --gold-glow: rgba(212, 175, 55, 0.3); /* Мягкое золотое свечение */
+    
+    /* Текстовые цвета */
+    --text-main: #F8F9FA;        /* Мягкий белый (молочный) — для заголовков */
+    --text-sub: #F8F9FA;         /* Приглушенный серый — для основного текста (глаза не устают) */
+    --accent-color: #F8F9FA;     /* Тот же мягкий белый для единства стиля */
+    
+    /* Функциональные цвета */
+    --whatsapp-color: #25D366;   /* Стандартный WhatsApp */
+    
+    /* Стеклянные эффекты (Glassmorphism) */
+    --glass-bg: rgba(255, 255, 255, 0.05); /* Чуть прозрачнее для глубины */
+    --glass-border: rgba(255, 255, 255, 0.15); /* Тонкая грань */
+}
 
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #050505;
-            color: var(--text-sub);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-        }
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #050505; /* Глубокий черный с оттенком графита */
+    color: var(--text-sub);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased; /* Делает шрифты более четкими на темном фоне */
+}
 
+        /* --- ЭФФЕКТ БЛЮРА НА ФОНЕ --- */
         body::before {
             content: "";
             position: fixed;
@@ -96,40 +104,47 @@
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('/images/probki.webp') no-repeat center center;
             background-size: cover;
-            filter: blur(1px);
-            transform: scale(1.1);
+            filter: blur(1px); /* Степень размытия фона */
+            transform: scale(1.1); /* Чтобы края не белели при блюре */
             z-index: -1;
         }
 
-        .golden-dust {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            background-image: 
-                radial-gradient(ellipse 1px 4px at 10% 20%, var(--gold-color), transparent),
-                radial-gradient(ellipse 4px 1px at 10% 20%, #fff, transparent),
-                radial-gradient(ellipse 1px 3px at 80% 10%, var(--gold-color), transparent),
-                radial-gradient(ellipse 3px 1px at 80% 10%, #fff, transparent),
-                radial-gradient(ellipse 1px 5px at 50% 50%, var(--gold-color), transparent),
-                radial-gradient(ellipse 5px 1px at 50% 50%, #fff, transparent),
-                radial-gradient(ellipse 1px 4px at 20% 80%, var(--gold-color), transparent),
-                radial-gradient(ellipse 4px 1px at 20% 80%, #fff, transparent),
-                radial-gradient(ellipse 1px 3px at 90% 85%, var(--gold-color), transparent),
-                radial-gradient(ellipse 3px 1px at 90% 85%, #fff, transparent),
-                radial-gradient(ellipse 1px 4px at 40% 35%, var(--gold-color), transparent),
-                radial-gradient(ellipse 4px 1px at 40% 35%, #fff, transparent);
+        /* --- АНИМАЦИЯ ДЛЯ КОМПЬЮТЕРОВ (СЛОЖНАЯ) --- */
+.golden-dust {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background-image: 
+        radial-gradient(ellipse 1px 4px at 10% 20%, var(--gold-color), transparent),
+        radial-gradient(ellipse 4px 1px at 10% 20%, #fff, transparent),
+        radial-gradient(ellipse 1px 3px at 80% 10%, var(--gold-color), transparent),
+        radial-gradient(ellipse 3px 1px at 80% 10%, #fff, transparent),
+        radial-gradient(ellipse 1px 5px at 50% 50%, var(--gold-color), transparent),
+        radial-gradient(ellipse 5px 1px at 50% 50%, #fff, transparent),
+        radial-gradient(ellipse 1px 4px at 20% 80%, var(--gold-color), transparent),
+        radial-gradient(ellipse 4px 1px at 20% 80%, #fff, transparent),
+        radial-gradient(ellipse 1px 3px at 90% 85%, var(--gold-color), transparent),
+        radial-gradient(ellipse 3px 1px at 90% 85%, #fff, transparent),
+        radial-gradient(ellipse 1px 4px at 40% 35%, var(--gold-color), transparent),
+        radial-gradient(ellipse 4px 1px at 40% 35%, #fff, transparent);
 
-            background-repeat: repeat;
-            background-size: 400px 400px;
-            animation: sparkleFull 5s infinite ease-in-out;
-            opacity: 0.6;
-        }
+    background-repeat: repeat;
+    background-size: 400px 400px;
+    animation: sparkleFull 5s infinite ease-in-out;
+    opacity: 0.6;
+}
 
-        @keyframes sparkleFull {
-            0%, 100% { opacity: 0.2; transform: scale(1) translate(0, 0); }
-            50% { opacity: 0.8; transform: scale(1.05) translate(5px, 5px); }
-        }
+@keyframes sparkleFull {
+    0%, 100% { 
+        opacity: 0.2; 
+        transform: scale(1) translate(0, 0); 
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.05) translate(5px, 5px); 
+    }
+}
 
         .top-bar {
             position: absolute;
@@ -141,12 +156,23 @@
 
         .social-links { display: flex; gap: 12px; }
         .social-btn {
-            display: flex; align-items: center; justify-content: center;
-            width: 30px; height: 30px; background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px;
-            transition: 0.3s; backdrop-filter: blur(3px); text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            transition: 0.3s;
+            backdrop-filter: blur(3px);
+            text-decoration: none;
         }
-        .social-btn:hover { background: var(--secondary-accent); border-color: var(--secondary-accent); transform: scale(1.1); }
+        .social-btn:hover {
+            background: var(--secondary-accent);
+            border-color: var(--secondary-accent);
+            transform: scale(1.1);
+        }
         .social-btn svg { width: 20px; height: 20px; fill: white; }
 
         .language-switcher { display: flex; gap: 8px; }
@@ -157,13 +183,25 @@
             border-radius: 20px; background: rgba(0,0,0,0.3); transition: 0.3s;
             backdrop-filter: blur(3px); box-sizing: border-box;
         }
-        .language-switcher a:hover, .language-switcher a.active { background: var(--secondary-accent); border-color: var(--secondary-accent); }
+        .language-switcher a:hover, .language-switcher a.active {
+            background: var(--secondary-accent); border-color: var(--secondary-accent);
+        }
 
         header {
-            height: auto; 
-            display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center;
-            padding: 150px 20px 60px 20px; background: transparent; position: relative; z-index: 10; box-sizing: border-box;
-        }
+    /* Убираем 80vh, чтобы блок не растягивался на весь экран */
+    height: auto; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: center;
+    /* 150px сверху для иконок, 60px снизу для симметрии */
+    padding: 150px 20px 60px 20px; 
+    background: transparent;
+    position: relative; 
+    z-index: 10;
+    box-sizing: border-box;
+}
         header h1 {
             font-family: 'Playfair Display', serif; font-size: 3.5rem;
             margin: 0; max-width: 900px; line-height: 1.2;
@@ -179,7 +217,14 @@
             overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
         }
 
-        .section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 10; }
+        .section { 
+    /* 60px сверху и снизу создадут идеальное расстояние между всеми блоками */
+    padding: 60px 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    position: relative; 
+    z-index: 10; 
+}
         .section-inner { max-width: 1100px; margin: auto; }
         
         h2 {
@@ -188,45 +233,115 @@
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        .products-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .products-container {
+            display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;
+        }
 
         .feature, .product {
-            background: var(--glass-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            background: var(--glass-bg); 
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
             border-radius: 15px; border: 1px solid var(--glass-border);
-            flex: 1 1 300px; max-width: 340px; box-sizing: border-box; text-align: center;
+            flex: 1 1 300px; max-width: 340px; box-sizing: border-box;
+            text-align: center;
             transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, opacity 0.6s ease;
             opacity: 0; transform: translateY(30px); color: var(--gold-color);
             display: flex; flex-direction: column;
         }
 
-        .product { padding: 40px 25px; min-height: 700px; overflow: visible; justify-content: flex-start; }
+        .product {
+            padding: 40px 25px; 
+            min-height: 700px; 
+            overflow: visible; 
+            justify-content: flex-start;
+        }
+        
         .feature { padding: 30px; }
+
         .product.visible, .feature.visible { opacity: 1; transform: translateY(0); }
+        
         .feature:hover, .product:hover {
             transform: translateY(-12px) !important; 
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
             background: rgba(255, 255, 255, 0.15);
         }
 
-        .feature h3 { font-family: 'Playfair Display', serif; color: var(--gold-color) !important; font-size: 1.8rem; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
-        .feature p { color: var(--text-main); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); margin: 0; }
+    /* Заголовки в блоке "Как это работает" — теперь белые */
+    .feature h3 { 
+    font-family: 'Playfair Display', serif; 
+    /* Если хотите золото — оставьте --gold-color. Если белый — --text-main */
+    color: var(--gold-color) !important; 
+    font-size: 1.8rem; 
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
 
-        .product-image-container { width: 100%; height: 350px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 20px; position: relative; z-index: 1; }
-        .product img { height: 100%; width: auto; object-fit: contain; filter: drop-shadow(0 0 15px var(--gold-glow)) drop-shadow(0 10px 20px rgba(0,0,0,0.6)); transform: scale(1.1); transition: transform 0.4s ease; }
+/* Описание в блоке "Как это работает" — золотое */
+.feature p {
+    color: var(--text-main); /* Исправлено: теперь используется переменная */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+        .product-image-container {
+            width: 100%; height: 350px; display: flex;
+            justify-content: center; align-items: flex-end;
+            margin-bottom: 20px; position: relative; z-index: 1;
+        }
+
+        .product img { 
+            height: 100%; width: auto; object-fit: contain; 
+            filter: drop-shadow(0 0 15px var(--gold-glow)) drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+            transform: scale(1.1);
+            transition: transform 0.4s ease;
+        }
+        
         .product:hover img { transform: scale(1.15); }
 
-        .product-image-uncrop { min-height: auto !important; padding-bottom: 35px !important; }
-        .product-image-uncrop img { width: 100% !important; height: auto !important; transform: scale(1) !important; object-fit: contain !important; margin-bottom: 20px; }
+        .product-image-uncrop {
+            min-height: auto !important; 
+            padding-bottom: 35px !important; 
+        }
+
+        .product-image-uncrop img {
+            width: 100% !important; 
+            height: auto !important; 
+            transform: scale(1) !important; 
+            object-fit: contain !important; 
+            margin-bottom: 20px;
+        }
+        
         .product-image-uncrop:hover img { transform: scale(1.05) !important; }
 
-        .product h3 { font-family: 'Playfair Display', serif; color: var(--gold-color); font-size: 1.2rem; margin-top: 0; margin-bottom: 20px; white-space: normal; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        /* Названия вин в карточках товаров */
+        .product h3 { 
+    font-family: 'Playfair Display', serif; 
+    color: var(--gold-color); /* Исправлено: убрана лишняя черточка в конце */
+    font-size: 1.2rem; 
+    margin-top: 0; 
+    margin-bottom: 20px;
+    white-space: normal;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
         .sommelier-title { display: block; font-size: 15px; font-weight: bold; margin: 10px 0 5px 0; color: var(--gold-color); }
         .sommelier-desc { display: block; font-size: 15px; color: var(--text-sub); margin-bottom: 20px; min-height: 70px; }
         .price { font-size: 1.8rem; font-weight: 700; color: var(--gold-color); display: block; margin-top: auto; padding-top: 15px;}
 
-        .section-packaging .product ul { list-style: none; padding: 0; text-align: left; margin: 15px 0; }
-        .section-packaging .product ul li { color: var(--text-main); position: relative; padding-left: 5px; } 
-        .section-packaging .product ul li::before { content: "✓ "; color: var(--gold-color); font-weight: bold; }
+        .section-how-it-works, .section-wines, .section-gourmet, .section-packaging, .section-about {
+            background: transparent !important; max-width: 1200px !important;
+            color: var(--text-sub);
+        }
+
+        .section-packaging .product ul { 
+    list-style: none; /* Убирает белые точки */
+    padding: 0; 
+    text-align: left; 
+    margin: 15px 0; 
+}
+.section-packaging .product ul li { 
+    color: var(--text-main); /* Делает текст белым */
+    position: relative;
+    padding-left: 5px; /* Небольшой отступ от галочки */
+} 
+.section-packaging .product ul li::before { content: "✓ "; color: var(--gold-color); font-weight: bold; }
         
         .section-about p {
             text-align: center; max-width: 850px; margin: auto; font-size: 1.25rem; 
@@ -238,78 +353,75 @@
         .card-premium { border: 2px solid var(--gold-color) !important; background: rgba(255, 255, 255, 0.15) !important; }
 
         .btn-whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px; background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--whatsapp-color); color: #fff; padding: 12px 25px;
-            text-decoration: none; border-radius: 50px; font-size: 16px; font-weight: 600;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); z-index: 1000; transition: 0.3s; display: flex; align-items: center;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--whatsapp-color);
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
         }
-        .btn-whatsapp-float:hover { transform: translateY(-5px) scale(1.05); background: rgba(255, 255, 255, 0.2); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); }
+
+        .btn-whatsapp-float:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
 
         footer { text-align: center; padding: 80px 20px; background: rgba(0,0,0,0.8); color: #999; font-size: 14px; position: relative; z-index: 10; }
 
-        /* --- НОВЫЕ СТИЛИ (AGE GATE, COOKIES, LEGAL) --- */
-        #age-gate {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #050505; z-index: 10000;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; color: var(--text-main);
-        }
-        .age-gate-content {
-            padding: 40px; border: 1px solid var(--gold-color);
-            background: rgba(255,255,255,0.05); border-radius: 20px;
-            max-width: 400px; backdrop-filter: blur(20px);
-        }
-        .btn-gold {
-            background: var(--gold-color); color: #000; border: none;
-            padding: 12px 30px; font-weight: bold; cursor: pointer;
-            border-radius: 50px; margin: 10px; transition: 0.3s; font-family: 'Roboto', sans-serif;
-        }
-        .btn-gold:hover { transform: scale(1.05); opacity: 0.9; }
-
-        #cookie-banner {
-            position: fixed; bottom: 20px; left: 20px; right: 20px;
-            background: rgba(10, 10, 10, 0.95); border: 1px solid var(--glass-border);
-            padding: 20px; border-radius: 15px; z-index: 9999;
-            display: none; align-items: center; justify-content: space-between;
-            flex-wrap: wrap; backdrop-filter: blur(10px);
-        }
-        #cookie-banner p { margin: 0 20px 0 0; font-size: 14px; color: var(--text-sub); flex: 1; text-align: left; }
-
-        .legal-links { margin-top: 20px; font-size: 12px; }
-        .legal-links a { color: #888; text-decoration: none; margin: 0 10px; transition: 0.3s; }
-        .legal-links a:hover { color: var(--gold-color); }
-
         @media(max-width:768px) {
-            header h1 { font-size: 2.4rem; }
-            h2 { font-size: 2.2rem; }
-            header { padding: 100px 20px 50px 20px; }
-            .product { min-height: auto; padding: 30px 20px; }
-            .product-image-container { height: 280px; }
-            .golden-dust { background-size: 250px 250px; animation: sparkleMobile 4s infinite linear; }
-            @keyframes sparkleMobile { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.6; } }
+        header h1 { font-size: 2.4rem; }
+        h2 { font-size: 2.2rem; }
+        .section { padding: 50px 20px; } 
+        header { 
+            padding: 100px 20px 50px 20px; 
+            height: auto; 
         }
+        .product { min-height: auto; padding: 30px 20px; }
+        .product-image-container { height: 280px; }
+        .product h3 { white-space: normal; margin-bottom: 15px; }
+
+        /* ТЕПЕРЬ ЭТО ВНУТРИ MEDIA */
+        .golden-dust {
+            background-image: 
+                radial-gradient(1px 1px at 20% 30%, var(--gold-color), transparent),
+                radial-gradient(1.5px 1.5px at 50% 60%, #fff, transparent),
+                radial-gradient(1px 1px at 80% 80%, var(--gold-color), transparent);
+            background-size: 250px 250px;
+            animation: sparkleMobile 4s infinite linear;
+            transform: none !important; 
+        }
+
+        @keyframes sparkleMobile {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+    }
    </style>
 </head>
 <body>
-
-<div id="age-gate">
-    <div class="age-gate-content">
-        <h2 style="margin-top:0; font-family: 'Playfair Display', serif;">Benvingut a Online Vinoteca</h2>
-        <p>Has de ser major d'edat per accedir a aquest lloc web.</p>
-        <p style="font-size: 0.9rem; color: var(--gold-color);">Confirmes que tens més de 18 anys?</p>
-        <button class="btn-gold" onclick="verifyAge()">SÍ, SÓC MAJOR D'EDAT</button>
-        <div style="margin-top:15px;"><a href="https://google.com" style="color:#666; text-decoration:none; font-size:12px;">Sortir</a></div>
-    </div>
-</div>
 
 <div class="golden-dust"></div>
 
 <div class="top-bar">
     <div class="social-links">
         <a href="https://www.instagram.com/vinoteca_andorra/" target="_blank" class="social-btn" title="Segueix-nos a Instagram">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.415-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.415-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413 1.266-.057 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.278.058-2.152.261-2.917.558-.79.306-1.46.717-2.127 1.384s-1.078 1.337-1.384 2.127c-.297.765-.499 1.639-.558 2.917-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.058 1.278.261 2.152.558 2.917.306.79.717 1.46 1.384 2.127s1.337 1.078 2.127 1.384c.765.297 1.639.499 2.917.558 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.278-.058 2.152-.261 2.917-.558.79-.306 1.46-.717 2.127-1.384s1.078-1.337 1.384-2.127c.297-.765.499-1.639.558-2.917.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.261-2.152-.558-2.917-.306-.79-.717-1.46-1.384-2.127s-1.337-1.078-2.127-1.384c-.765-.297-1.639-.499-2.917-.558-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c0 .796-.646 1.442-1.442 1.442-.797 0-1.442-.646-1.442-1.442 0-.797.646-1.442 1.442-1.442.796 0 1.442.646 1.442 1.442z"/></svg>
-        </a>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.415-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.415-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413 1.266-.057 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.278.058-2.152.261-2.917.558-.79.306-1.46.717-2.127 1.384s-1.078 1.337-1.384 2.127c-.297.765-.499 1.639-.558 2.917-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.058 1.278.261 2.152.558 2.917.306.79.717 1.46 1.384 2.127s1.337 1.078 2.127 1.384c.765.297 1.639.499 2.917.558 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.278-.058 2.152-.261 2.917-.558.79-.306 1.46-.717 2.127-1.384s1.078-1.337 1.384-2.127c.297-.765.499-1.639.558-2.917.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.261-2.152-.558-2.917-.306-.79-.717-1.46-1.384-2.127s-1.337-1.078-2.127-1.384c-.765-.297-1.639-.499-2.917-.558-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c0 .796-.646 1.442-1.442 1.442-.797 0-1.442-.646-1.442-1.442 0-.797.646-1.442 1.442-1.442.796 0 1.442.646 1.442 1.442z"/>
+    </svg>
+</a>
         <a href="mailto:vinoteca.and@gmail.com" class="social-btn" title="Contacta'ns per Email">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
@@ -326,6 +438,7 @@
 
 <header>
     <h1>Regals de vi amb entrega a domicili a Andorra</h1>
+    <h2 class="visually-hidden">Venda online de vins italians Cabota i lots de regal gourmet a Andorra</h2>
     <p>Tria el vi perfecte, afegeix productes gourmet i nosaltres preparem el teu regal premium.</p>
 </header>
 
@@ -414,6 +527,9 @@
 <section class="section section-gourmet">
     <div class="section-inner">
         <h2>Afegeix productes gourmet</h2>
+        <p style="text-align: center; font-size: 0.8rem; color: #888; margin-top: -30px; margin-bottom: 30px;">
+            *Les imatges són suggestió de presentació. Els productes s'entreguen en el seu embalatge original per garantir-ne la higiene.
+        </p>
         <div class="products-container">
             <div class="product product-image-uncrop">
                 <img src="/images/bombons.webp" alt="Bombons Artesans per a Regal" loading="lazy">
@@ -476,14 +592,9 @@
     </div>
 </section>
 
-<a class="btn-whatsapp-float" href="https://wa.me/376691408?text=Hola!%20Voldria%20fer%20una%20comanda" target="_blank">
+<a class="btn-whatsapp-float" href="https://wa.me/376362272?text=Hola!%20Voldria%20fer%20una%20comanda%20d'un%20lot%20de%20regal" target="_blank">
     <span>Demanar per WhatsApp</span>
 </a>
-
-<div id="cookie-banner">
-    <p>Utilitzem cookies pròpies i de tercers per millorar la teva experiència i analitzar el trànsit. En continuar navegant, acceptes la nostra política de privacitat i l'ús de cookies segons la Llei 29/2021 d'Andorra.</p>
-    <button class="btn-gold" onclick="acceptCookies()" style="padding: 8px 20px; font-size: 13px;">ACCEPTAR</button>
-</div>
 
 <footer>
     <div style="margin-bottom: 20px; font-family: 'Playfair Display', serif; color: white; font-size: 1.2rem;">Online Vinoteca</div>
@@ -491,21 +602,10 @@
         <a href="mailto:vinoteca.and@gmail.com" style="color: #D4AF37; text-decoration: none;">vinoteca.and@gmail.com</a>
     </div>
     <div style="margin-bottom: 15px; color: #ccc;">Carrer Santa Anna, 8, AD700 Escaldes-Engordany, Andorra</div>
-    
-    <div class="legal-links">
-        <a href="legal.html">Avis Legal i Privacitat</a> | 
-        <a href="legal.html">Condicions de Venda</a> | 
-        <a href="legal.html">Cookies</a>
-    </div>
-
-    <div style="margin-top:20px; color: #666; font-size: 12px;">
-        &copy; 2026 Online Vinoteca Andorra. Entregues exclusives al Principat d'Andorra. <br>
-        Venda prohibida a menors de 18 anys. Beu amb moderació.
-    </div>
+    <span style="color: #999;">&copy; 2026 Online Vinoteca Andorra - Regals de Vi Premium i Entregues a Domicili.</span>
 </footer>
 
 <script>
-    // Анимация при скролле
     function animateOnScroll() {
         const elements = document.querySelectorAll('.feature, .product');
         const triggerBottom = window.innerHeight * 0.85;
@@ -514,36 +614,8 @@
             if(top < triggerBottom) el.classList.add('visible');
         });
     }
-
-    // Проверка возраста
-    function verifyAge() {
-        localStorage.setItem('ageVerified', 'true');
-        document.getElementById('age-gate').style.display = 'none';
-    }
-
-    // Принятие куки
-    function acceptCookies() {
-        localStorage.setItem('cookiesAccepted', 'true');
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-
     window.addEventListener('scroll', animateOnScroll);
-    
-    window.addEventListener('load', function() {
-        animateOnScroll();
-        
-        // Проверка состояния age gate
-        if (localStorage.getItem('ageVerified') === 'true') {
-            document.getElementById('age-gate').style.display = 'none';
-        }
-        
-        // Показ баннера куки
-        if (!localStorage.getItem('cookiesAccepted')) {
-            setTimeout(() => {
-                document.getElementById('cookie-banner').style.display = 'flex';
-            }, 2000);
-        }
-    });
+    window.addEventListener('load', animateOnScroll);
 </script>
 
 </body>
